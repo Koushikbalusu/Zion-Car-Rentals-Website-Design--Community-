@@ -905,7 +905,7 @@ export function BookingForm({ car }: BookingFormProps) {
                         required: homeDelivery ? "Delivery distance is required" : false,
                         validate: (value) => {
                           if (homeDelivery) {
-                            if (value === undefined || value === null || value === '') {
+                            if (value === undefined || value === null) {
                               return "Delivery distance is required";
                             }
                             const numValue = Number(value);
