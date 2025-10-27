@@ -1,0 +1,17 @@
+{
+  "extends": ["next", "next/core-web-vitals"],
+  "rules": {
+    "react/jsx-sort-props": [
+      "warn",
+      {
+        "callbacksLast": false,
+        "shorthandFirst": false,
+        "shorthandLast": false,
+        "multiline": "last",
+        "noSortAlphabetically": false,
+        "ignoreCase": true
+      }
+    ]
+  }
+}
+
