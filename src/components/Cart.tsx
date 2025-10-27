@@ -4,7 +4,15 @@ import { Button } from './ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Separator } from './ui/separator';
 import { Trash2, Plus, Minus, ArrowLeft } from 'lucide-react';
-import { Car } from './CarCard';
+
+interface Car {
+  id: string;
+  name: string;
+  type: string;
+  seats: number;
+  image: string;
+  price: number;
+}
 
 export interface CartItem extends Car {
   quantity: number;
