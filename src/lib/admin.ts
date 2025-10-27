@@ -34,7 +34,20 @@ const statusLabels: Record<string, string> = {
 function mapAdminBooking(apiBooking: ApiBookingSummary): BookingSummary {
   const summary = mapApiCarToCard(apiBooking.carId);
   const depositAmount = calculateDeposit(apiBooking.carId.type);
-  const totalPrice = apiBooking.totalPrice ?? summary.pricePerHour * apiBooking.duration;
+  
+  // Calculate fallback price based on duration using the pricing structure
+  let fallbackPrice = summary.pricing.price12hr;
+  if (apiBooking.duration >= 72) {
+    fallbackPrice = summary.pricing.price72hr;
+  } else if (apiBooking.duration >= 60) {
+    fallbackPrice = summary.pricing.price60hr;
+  } else if (apiBooking.duration >= 48) {
+    fallbackPrice = summary.pricing.price48hr;
+  } else if (apiBooking.duration >= 24) {
+    fallbackPrice = summary.pricing.price24hr;
+  }
+  
+  const totalPrice = apiBooking.totalPrice ?? fallbackPrice;
 
   return {
     id: apiBooking._id,
