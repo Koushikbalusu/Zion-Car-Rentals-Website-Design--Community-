@@ -29,7 +29,7 @@ export function CarDetail({ car, onReserve }: CarDetailProps) {
     return url.startsWith('http://') || url.startsWith('https://') || url.startsWith('/');
   };
   
-  const imageSrc = isValidImageUrl(car.imageUrl) ? car.imageUrl : PLACEHOLDER_IMAGE;
+  const imageSrc = isValidImageUrl(car.imageUrl) && car.imageUrl ? car.imageUrl : PLACEHOLDER_IMAGE;
 
   return (
     <section className="space-y-12">
