@@ -37,7 +37,7 @@ export function CarCard({
     return url.startsWith('http://') || url.startsWith('https://') || url.startsWith('/');
   };
   
-  const getImageSrc = () => {
+  const getImageSrc = (): string => {
     if (car.imageUrl && isValidImageUrl(car.imageUrl)) {
       return car.imageUrl;
     }

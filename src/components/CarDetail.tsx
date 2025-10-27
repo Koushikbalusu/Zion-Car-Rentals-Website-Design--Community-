@@ -29,7 +29,14 @@ export function CarDetail({ car, onReserve }: CarDetailProps) {
     return url.startsWith('http://') || url.startsWith('https://') || url.startsWith('/');
   };
   
-  const imageSrc = isValidImageUrl(car.imageUrl) && car.imageUrl ? car.imageUrl : PLACEHOLDER_IMAGE;
+  const getImageSrc = (): string => {
+    if (car.imageUrl && isValidImageUrl(car.imageUrl)) {
+      return car.imageUrl;
+    }
+    return PLACEHOLDER_IMAGE;
+  };
+  
+  const imageSrc = getImageSrc();
 
   return (
     <section className="space-y-12">
