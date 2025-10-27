@@ -29,7 +29,7 @@ export function Invoice({ orderData, onBackToHome }: InvoiceProps) {
           <CheckCircle className="h-8 w-8 text-green-600" />
         </div>
         <h1 className="text-3xl font-bold text-foreground mb-2">Payment Successful!</h1>
-        <p className="text-muted-foreground">Your car rental has been confirmed. Here's your invoice:</p>
+        <p className="text-muted-foreground">Your car rental has been confirmed. Here&apos;s your invoice:</p>
       </div>
 
       <div className="max-w-4xl mx-auto">
@@ -159,7 +159,7 @@ export function Invoice({ orderData, onBackToHome }: InvoiceProps) {
               <ul className="text-sm text-muted-foreground space-y-1">
                 <li>• Vehicle must be returned in the same condition as received</li>
                 <li>• Late returns will incur additional charges</li>
-                <li>• Valid driver's license required for pickup</li>
+                <li>• Valid driver&apos;s license required for pickup</li>
                 <li>• Cancellations must be made 24 hours in advance</li>
               </ul>
             </div>

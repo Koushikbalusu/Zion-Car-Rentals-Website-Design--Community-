@@ -136,7 +136,7 @@ export function Contact() {
             </Card>
             <Card>
               <CardContent className="p-6">
-                <h4 className="font-semibold mb-2">What's included in the price?</h4>
+                <h4 className="font-semibold mb-2">What&apos;s included in the price?</h4>
                 <p className="text-sm text-muted-foreground">
                   All rentals include comprehensive insurance, 24/7 support, 
                   and professional vehicle preparation.

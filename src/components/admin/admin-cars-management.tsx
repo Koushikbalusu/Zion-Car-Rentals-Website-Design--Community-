@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { 
   Car, 
   DollarSign, 
@@ -57,7 +57,7 @@ export function AdminCarsManagement() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const loadCars = async () => {
+  const loadCars = useCallback(async () => {
     if (!token) return;
     
     setIsLoading(true);
@@ -72,11 +72,11 @@ export function AdminCarsManagement() {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [token]);
 
   useEffect(() => {
     loadCars();
-  }, [token]);
+  }, [loadCars]);
 
   const handleCarAdded = () => {
     loadCars();

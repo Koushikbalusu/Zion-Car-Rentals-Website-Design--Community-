@@ -50,7 +50,7 @@ export function AdminRouteGuard({ children }: AdminRouteGuardProps) {
             <AlertCircle className="h-12 w-12 mx-auto text-red-500 mb-4" />
             <h2 className="text-lg font-semibold mb-2">Access Denied</h2>
             <p className="text-muted-foreground mb-4">
-              You don't have permission to access the admin dashboard.
+              You don&apos;t have permission to access the admin dashboard.
             </p>
             <Button onClick={() => router.push("/dashboard/bookings")}>
               Go to Customer Dashboard
