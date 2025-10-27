@@ -32,7 +32,7 @@ export function Cars({ cars, onPrimaryAction, onSecondaryAction }: CarsProps) {
 
     const matchesType = selectedType === "all" || car.type === selectedType;
 
-    const pricePerPeriod = car.pricePerHour * 12;
+    const pricePerPeriod = car.pricing.price12hr;
     const matchesPriceRange =
       selectedPriceRange === "all" ||
       (selectedPriceRange === "low" && pricePerPeriod < 25000) ||
